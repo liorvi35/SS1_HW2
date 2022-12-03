@@ -8,6 +8,9 @@
 #include <stdio.h>
 #include "my_mat.h"
 
+// defining constans
+#define V 10
+
 /**
  * this is the main function. it gets an character as input from the user and performs:
  *	A -> absorbs 100 (10x10) integers for the adjacency matrix of the graph
@@ -18,28 +21,28 @@
  */
 int main()
 {
-	int adjMat[10][10], i = 0, j = 0;
-	char c = ' ';
+	int adjMat[V][V], i = 0, j = 0;
+	char c = 'a';
 	c = getchar();
-	swith(c)
+	while(c != 'D')
 	{
-		case 'A':
-			for(i = 0; i < 10; i++)
-				for(j = 0; j < 10; j++)
-					scanf("%d", &adjMat[i][j])
-			break;
-		case 'B':
-			scanf("%d %d", &i, &j);
-			printf("%s", FW(adjMat, i, j) != 0 ? "TRUE" : "FALSE");
-			break;
-		case 'C':
-			scanf("%d %d", &i, &j);
-			printf("%d", FW(adjMat, i, j) != 0 ? FW(adjMath, i, j) : -1);
-			break;
-		defult:
-			return 0;
-			break;
-
+		switch(c)
+		{
+			case 'A':
+				for(i = 0; i < V; i++)
+					for(j = 0; j < V; j++)
+						scanf("%d", &adjMat[i][j]);
+				break;
+			case 'B':
+				scanf("%d %d", &i, &j);
+				printf("%s", FW(adjMat, i, j) != 0 ? "TRUE" : "FALSE");
+				break;
+			case 'C':
+				scanf("%d %d", &i, &j);
+				printf("%d", FW(adjMat, i, j) != 0 ? FW(adjMat, i, j) : -1);
+				break;
+		}
+		c = getchar();
 	}
 	return 0;
 }
