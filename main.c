@@ -20,7 +20,7 @@
 */
 int main()
 {
-	int adjMat[V][V] = {0};
+	int adjMat[V][V];
 	char option = 'a';
 	option = getchar();
 	while(option != 'D')
