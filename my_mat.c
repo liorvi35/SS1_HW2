@@ -57,7 +57,7 @@ void inputMat(int mat[V][V])
 int FW(int adj[V][V], int u, int v)
 {
 	int dist[V][V], i = 0, j = 0, k = 0;
-	for(i = 0; i < V; i++) // depp coping adjacency matrix
+	for(i = 0; i < V; i++) // deep coping adjacency matrix
 		for(j = 0; j < V; j++)
 			dist[i][j] = adj[i][j];
 	for(k = 0; k < V; k++) // checking for every vertice the shortest path to other vertices
