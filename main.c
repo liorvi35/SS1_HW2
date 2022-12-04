@@ -16,7 +16,7 @@
  *	B -> absorbs two integers that represents vertices, prints T if exists path between them, else prints F
  *	C -> absorbs two integers that represents vertices, prints the shortest path between them if exists, else prints -1
  *	D (and others, but we assume valid input) -> exits the program 
- * @return 0
+ * @return 0 iff entered D , -1 iff entered invalid input
  */
 int main()
 {
