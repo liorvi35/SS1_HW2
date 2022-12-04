@@ -28,7 +28,7 @@ void isPathExists(int mat[V][V])
 {
 	int i = 0, j = 0;
 	scanf("%d %d", &i, &j);
-	printf("%s\n", FW(mat, i, j) == 0 || FW(mat, i, j) == INF ? "FALSE" : "TRUE");
+	printf("%s\n", FW(mat, i, j) == 0 || FW(mat, i, j) == INF ? "False" : "True");
 }
 
 /**
