@@ -21,7 +21,7 @@
 int main()
 {
 	int adjMat[V][V] = {0};
-	char option = '\0';
+	char option = 'a';
 	option = getchar();
 	while(option != 'D')
 	{
