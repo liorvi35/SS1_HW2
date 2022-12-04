@@ -17,7 +17,7 @@ void shortestPath(int mat[V][V])
 {
 	int i = 0, j = 0;
 	scanf("%d %d", &i, &j);
-	printf("%d\n", FW(mat, i, j) == 0 || FW(mat, i, j) == INF ? -1 : FW(mat, i, j));
+	printf("%d\n", FW(mat, i, j) == 0 || FW(mat, i, j) == INF ? -1 : FW(mat, i, j)); // FW returns the shortest path iff exists
 }
 
 /**
@@ -28,7 +28,7 @@ void isPathExists(int mat[V][V])
 {
 	int i = 0, j = 0;
 	scanf("%d %d", &i, &j);
-	printf("%s\n", FW(mat, i, j) == 0 || FW(mat, i, j) == INF ? "False" : "True");
+	printf("%s\n", FW(mat, i, j) == 0 || FW(mat, i, j) == INF ? "False" : "True"); // FW return integer iff exists path
 }
 
 /**
@@ -42,8 +42,8 @@ void inputMat(int mat[V][V])
 		for(j = 0; j < V; j++)
 		{
 			scanf("%d", &mat[i][j]);
-			if(i != j && mat[i][j] == 0)
-			mat[i][j] = INF;
+			if(i != j && mat[i][j] == 0) // FW works with matrices that has 0 only in main diagonal and INF in other places
+				mat[i][j] = INF;
 		}
 }
 
@@ -57,12 +57,10 @@ void inputMat(int mat[V][V])
 int FW(int adj[V][V], int u, int v)
 {
 	int dist[V][V], i = 0, j = 0, k = 0;
-	for(i = 0; i < V; i++)
+	for(i = 0; i < V; i++) // depp coping adjacency matrix
 		for(j = 0; j < V; j++)
 			dist[i][j] = adj[i][j];
-	for(i = 0; i < V; i++)
-		dist[i][i] = 0;
-	for(k = 0; k < V; k++)
+	for(k = 0; k < V; k++) // checking for every vertice the shortest path to other vertices
 		for(i = 0; i < V; i++)
 			for(j = 0; j < V; j++)
 				if(dist[i][j] > dist[i][k] + dist[k][j])
