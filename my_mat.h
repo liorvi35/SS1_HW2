@@ -9,7 +9,7 @@
 #define INF 10*10*10*10*10*10*10
 
 // defining functions
-int FW(int adj[V][V], int u, int v);
-void inputMat(int mat[V][V]);
-void isPathExists(int mat[V][V]);
-void shortestPath(int mat[V][V]);
+int FW(int adj[10][10], int u, int v);
+void inputMat(int mat[10][10]);
+void isPathExists(int mat[10][10]);
+void shortestPath(int mat[10][10]);
