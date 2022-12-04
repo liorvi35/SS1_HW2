@@ -8,8 +8,7 @@
 #include <stdio.h>
 #include "my_mat.h"
 
-// defining constans
-#define V 10
+
 
 /**
  * this is the main function. it gets an character as input from the user and performs:
@@ -21,28 +20,27 @@
  */
 int main()
 {
-	int adjMat[V][V], i = 0, j = 0;
-	char c = 'a';
-	c = getchar();
-	while(c != 'D')
+	int adjMat[V][V] = {0};
+	char option = '\0';
+	option = getchar();
+	while(option != 'D')
 	{
-		switch(c)
+		switch(option)
 		{
 			case 'A':
-				for(i = 0; i < V; i++)
-					for(j = 0; j < V; j++)
-						scanf("%d", &adjMat[i][j]);
+				inputMat(adjMat);
 				break;
 			case 'B':
-				scanf("%d %d", &i, &j);
-				printf("%s", FW(adjMat, i, j) != 0 ? "TRUE" : "FALSE");
+				isPathExists(adjMat);
 				break;
 			case 'C':
-				scanf("%d %d", &i, &j);
-				printf("%d", FW(adjMat, i, j) != 0 ? FW(adjMat, i, j) : -1);
+				shortestPath(adjMat);
+				break;
+			case 'D':
+				return 0;
 				break;
 		}
-		c = getchar();
+		option = getchar();
 	}
-	return 0;
+	return -1;
 }
