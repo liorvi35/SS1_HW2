@@ -40,7 +40,6 @@ int main()
 				return 0;
 				break;
 	}
-		printf("\n");
 		option = getchar();
 	}
 	return -1;
