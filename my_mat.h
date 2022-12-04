@@ -4,4 +4,12 @@
  * @authors Lior Vinman (ID: 213081763) & Daniel Bespalov (ID: 213446479)
  */
 
-int FW(int adj[10][10], int u, int v);
+// defining constans
+#define V 10
+#define INF 10*10*10*10*10*10*10
+
+// defining functions
+int FW(int[V][V], int, int);
+void inputMat(int[V][V]);
+void isPathExists(int[V][V]);
+void shortestPath(int[V][V]);
